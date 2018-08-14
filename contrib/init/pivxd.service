@@ -1,0 +1,26 @@
+[Unit]
+Description=RECUR's distributed currency daemon
+After=network.target
+
+[Service]
+User=recur
+Group=recur
+
+Type=forking
+PIDFile=/var/lib/recurd/recurd.pid
+
+ExecStart=/usr/bin/recurd -daemon -pid=/var/lib/recurd/recurd.pid \
+          -conf=/etc/recur/recur.conf -datadir=/var/lib/recurd
+
+ExecStop=-/usr/bin/recur-cli -conf=/etc/recur/recur.conf \
+         -datadir=/var/lib/recurd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,26 @@
+# /etc/conf.d/recurd: config file for /etc/init.d/recurd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/recur/recur.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/recurd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/recurd.pid"
+
+# Where to write recurd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/recurd"
+
+# User and group to own recurd process
+#BITCOIND_USER="recur"
+#BITCOIND_GROUP="recur"
+
+# Path to recurd executable
+#BITCOIND_BIN="/usr/bin/recurd"
+
+# Nice value to run recurd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

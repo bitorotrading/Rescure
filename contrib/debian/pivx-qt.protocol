@@ -1,0 +1,11 @@
+[Protocol]
+exec=recur-qt '%u'
+protocol=recur
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false
