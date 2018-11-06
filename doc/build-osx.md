@@ -50,7 +50,7 @@ Instructions: Homebrew
 2.  Build recurd:
 
         ./autogen.sh
-        ./configure --with-gui=qt5
+        ./configure LDFLAGS='-L/usr/local/opt/openssl/lib' CPPFLAGS='-I/usr/local/opt/openssl/include' PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig' --with-gui=qt5
         make
 
 3.  It is also a good idea to build and run the unit tests:
@@ -69,8 +69,9 @@ Instructions: Homebrew
 
 1. You can run it by executing the recur-qt executable directly
         A. clone and cd into repo (assuming you followed steps to build recurd)
-
+                
                 cd Rescure
+                
         B. run executable
 
                 ./recur-qt
